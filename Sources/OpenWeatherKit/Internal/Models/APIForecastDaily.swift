@@ -33,7 +33,7 @@ struct APIDay: Codable, Equatable {
     let precipitationChance: Double
     let precipitationType: String
     let snowfallAmount: Double
-    let solarMidnight: Date
+    let solarMidnight: Date?
     let solarNoon: Date
     let sunrise: Date
     let sunriseCivil: Date
