@@ -28,7 +28,7 @@ final public class WeatherService: Sendable {
             
         }
 
-        public var jwt: @Sendable () -> String
+        public var jwt: @Sendable () async -> String
         public var language: Language
 #if os(Linux)
         @available(*, deprecated, renamed: "init(jwt:language:)")
@@ -46,7 +46,7 @@ final public class WeatherService: Sendable {
         ///   - jwt: A closure to provide a JWT.
         ///   - language: A language to localize human readable strings.
         public init(
-            jwt: @escaping @Sendable () -> String,
+            jwt: @escaping @Sendable () async -> String,
             language: WeatherService.Configuration.Language = .englishUS
         ) {
             self.jwt = jwt
